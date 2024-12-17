@@ -10,3 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         searchForm.classList.add("d-none");
     }
 });
+
+document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+    document.getElementById('deleteForm').submit();
+});

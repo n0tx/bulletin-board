@@ -19,7 +19,7 @@
 									<span th:text="${incorrectPassword}"></span>
 								</div>
 							</div>
-							<form method="post" th:action="@{/post/delete/{id}(id=${postForm.id})}"
+							<form id="deleteForm" method="post" th:action="@{/post/delete/{id}(id=${postForm.id})}"
 								th:object="${postForm}">
 								<input type="hidden" name="_method" value="delete"/>
 								<div class="form-group row">
@@ -53,11 +53,12 @@
 										</textarea>
 									</div>
 								</div>
-
 								<div class="form-group row">
 									<div class="col-sm-2"></div>
 									<div class="col-sm-8 mb-sm-0">
-										<input type="submit" value="Delete" class="btn btn-danger">
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+											Delete
+										</button>
 									</div>
 								</div>
 
@@ -68,5 +69,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
