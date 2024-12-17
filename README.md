@@ -17,9 +17,9 @@
 
 ![image](https://github.com/user-attachments/assets/3e1b777d-7989-464d-bfa0-64b18713cdf9)
 
+## How to run the application
 
-
-### 1. **Clone The Source Code**
+### 1. **Clone the source code**
 
 ```
 git clone https://github.com/n0tx/bulletin-board.git
@@ -39,7 +39,7 @@ git clone https://github.com/n0tx/bulletin-board.git
 /home/n0tx/bulletin-board
 ```
 
-### 2. **Creating a PostgreSQL Database**
+### 2. **Creating a postgreSQL database**
 
 ```
 create database bulletin_board  with owner = springboot;
@@ -75,7 +75,7 @@ spring.sql.init.platform=postgres
 Customize with your database settings
 ```
 
-### 4. **Running Applications**
+### 4. **Running applications**
 
 ```
 ./mvnw spring-boot:run
