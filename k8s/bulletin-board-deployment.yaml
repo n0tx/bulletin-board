@@ -20,11 +20,11 @@ spec:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: ${{ secrets.SPRING_DATASOURCE_URL }}
+              value: jdbc:postgresql://postgres-service:5432/bulletin_board
             - name: SPRING_DATASOURCE_USERNAME
-              value: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
+              value: springboot
             - name: SPRING_DATASOURCE_PASSWORD
-              value: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
+              value: springboot
 ---
 apiVersion: v1
 kind: Service
