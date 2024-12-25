@@ -44,8 +44,3 @@ jobs:
       # Step 6: Push Docker Image to Docker Hub
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/bulletin-board:v1
-
-      - name: Deploy to Minikube
-        run: |
-          kubectl apply -f k8s/postgres-deployment.yaml
-          kubectl apply -f k8s/bulletin-board-deployment.yaml
