@@ -1,10 +1,6 @@
 name: Build and Deploy to Docker Hub
 
-on:
-  push:
-    branches:
-      - main
-
+on: [workflow_dispatch]
 
 jobs:
   build-and-push:
@@ -32,7 +28,7 @@ jobs:
 
       # Step 3: Build Application
       - name: Build with Maven
-        run: mvn clean package
+        run: mvn clean package -DskipTests
 
       # Step 4: Log in to Docker Hub
       - name: Log in to Docker Hub
@@ -48,3 +44,8 @@ jobs:
       # Step 6: Push Docker Image to Docker Hub
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/bulletin-board:v1
+
+      - name: Deploy to Minikube
+        run: |
+          kubectl apply -f k8s/postgres-deployment.yaml
+          kubectl apply -f k8s/bulletin-board-deployment.yaml
